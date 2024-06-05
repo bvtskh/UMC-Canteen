@@ -50,6 +50,8 @@ namespace CanTeenManagement
             btnShowSystem.BackgroundImage = Properties.Resources.Arrow;
             dgrListIngredient.AutoGenerateColumns = false;
             cbIngredientList.DropDownHeight = cbIngredientList.ItemHeight * 8;
+
+            dgrListDish.ColumnHeadersDefaultCellStyle.Font = new Font("Arial",10,FontStyle.Bold);
         }
         private void SetUpDateTimePicker()
         {
