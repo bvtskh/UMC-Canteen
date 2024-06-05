@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ABFC8D39-5832-464B-B4D3-9483D7C2EC5C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CanTeenManagement</RootNamespace>
+    <AssemblyName>CanTeenManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\vn-file\LCA Department\36. CanTeenManagement\UMC-DX\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>canteen.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>14EAD896EE86BF6F813926DF1320CFA222D8A54B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CanTeenManagement_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.50.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.50\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniExcel, Version=1.31.3.0, Culture=neutral, PublicKeyToken=e7310002a53eac39, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniExcel.1.31.3\lib\net45\MiniExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.License">
+      <HintPath>..\..\..\..\Desktop\LIB\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf">
+      <HintPath>..\..\..\..\Desktop\LIB\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.XLS">
+      <HintPath>..\..\..\..\Desktop\LIB\Spire.XLS.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI, Version=3.6.2.0, Culture=neutral, PublicKeyToken=27d7d2e821d97aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\SunnyUI.3.6.2\lib\net40\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI.Common, Version=3.5.1.0, Culture=neutral, PublicKeyToken=5a271fb7ba597231, processorArchitecture=MSIL">
+      <HintPath>..\packages\SunnyUI.Common.3.5.1\lib\net40\SunnyUI.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.6.417, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZedGraph.5.1.6\lib\net35-Client\ZedGraph.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bussiness\ENUM\DishEnum.cs" />
+    <Compile Include="Bussiness\ENUM\EnumSupplier.cs" />
+    <Compile Include="Bussiness\ENUM\Menu.cs" />
+    <Compile Include="Bussiness\ENUM\OrderEnum.cs" />
+    <Compile Include="Bussiness\SQLHelper\DishHelper.cs" />
+    <Compile Include="Bussiness\SQLHelper\IngredientHelper.cs" />
+    <Compile Include="Bussiness\SQLHelper\InputHelper.cs" />
+    <Compile Include="Bussiness\SQLHelper\LoginHelper.cs" />
+    <Compile Include="Bussiness\SQLHelper\MainHelper.cs" />
+    <Compile Include="Bussiness\SQLHelper\MasterHelper.cs" />
+    <Compile Include="Bussiness\SQLHelper\MenuHelper.cs" />
+    <Compile Include="Bussiness\SQLHelper\OrderHelper.cs" />
+    <Compile Include="Bussiness\SQLHelper\OutputHelper.cs" />
+    <Compile Include="Bussiness\SQLHelper\StockHelper.cs" />
+    <Compile Include="Bussiness\SQLHelper\SupplierHelper.cs" />
+    <Compile Include="CanteenManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CanteenManagementDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormChangeOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormChangeOrder.Designer.cs">
+      <DependentUpon>FormChangeOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormInput.Designer.cs">
+      <DependentUpon>FormInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormOverTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormOverTime.Designer.cs">
+      <DependentUpon>FormOverTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormSelectSupplierClon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormSelectSupplierClon.Designer.cs">
+      <DependentUpon>FormSelectSupplierClon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormUpdatePrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormUpdatePrice.Designer.cs">
+      <DependentUpon>FormUpdatePrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormAccountManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormAccountManagement.Designer.cs">
+      <DependentUpon>FormAccountManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormCheckHistoryOutStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormCheckHistoryOutStock.Designer.cs">
+      <DependentUpon>FormCheckHistoryOutStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormStatistic.Designer.cs">
+      <DependentUpon>FormStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormSupplierPriority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormSupplierPriority.Designer.cs">
+      <DependentUpon>FormSupplierPriority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormUuTienDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormUuTienDatHang.Designer.cs">
+      <DependentUpon>FormUuTienDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormChangePassword.Designer.cs">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormMenuChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormMenuChinh.Designer.cs">
+      <DependentUpon>FormMenuChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormMenuNhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormMenuNhe.Designer.cs">
+      <DependentUpon>FormMenuNhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormAddDish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormAddDish.Designer.cs">
+      <DependentUpon>FormAddDish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormAddIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormAddIngredient.Designer.cs">
+      <DependentUpon>FormAddIngredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormAddIngredientAddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormAddIngredientAddSupplier.Designer.cs">
+      <DependentUpon>FormAddIngredientAddSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormAddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormAddSupplier.Designer.cs">
+      <DependentUpon>FormAddSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormLoading.Designer.cs">
+      <DependentUpon>FormLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormMaster.Designer.cs">
+      <DependentUpon>FormMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormOrder.Designer.cs">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormOutput.Designer.cs">
+      <DependentUpon>FormOutput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormSelectSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormSelectSupplier.Designer.cs">
+      <DependentUpon>FormSelectSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormStock.Designer.cs">
+      <DependentUpon>FormStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormSupplier.Designer.cs">
+      <DependentUpon>FormSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DBContext.cs" />
+    <Compile Include="Model\Tbl_PriceHistoryClon.cs" />
+    <Compile Include="Model\sysdiagram.cs" />
+    <Compile Include="Model\Tbl_ChangeOrder.cs" />
+    <Compile Include="Model\Tbl_Dish.cs" />
+    <Compile Include="Model\Tbl_FoodPortion.cs" />
+    <Compile Include="Model\Tbl_HistoryInOut.cs" />
+    <Compile Include="Model\Tbl_HistoryPrice.cs" />
+    <Compile Include="Model\Tbl_Ingredient.cs" />
+    <Compile Include="Model\Tbl_Menu.cs" />
+    <Compile Include="Model\Tbl_Order.cs" />
+    <Compile Include="Model\Tbl_OrderHistory.cs" />
+    <Compile Include="Model\Tbl_PreOrder.cs" />
+    <Compile Include="Model\Tbl_PriceUpdateChange.cs" />
+    <Compile Include="Model\Tbl_Quantitative.cs" />
+    <Compile Include="Model\Tbl_Stock.cs" />
+    <Compile Include="Model\Tbl_Supplier.cs" />
+    <Compile Include="Model\Tbl_User.cs" />
+    <Compile Include="Model\Tbl_Version.cs" />
+    <Compile Include="OverTime\DBContextOverTime.cs" />
+    <Compile Include="OverTime\sysdiagram.cs" />
+    <Compile Include="OverTime\Tbl_Approve.cs" />
+    <Compile Include="OverTime\Tbl_BudgetOT.cs" />
+    <Compile Include="OverTime\Tbl_DailyOverTime.cs" />
+    <Compile Include="OverTime\Tbl_HistoryUpdateOT.cs" />
+    <Compile Include="OverTime\Tbl_MasterShift.cs" />
+    <Compile Include="OverTime\Tbl_OTBeforeShift.cs" />
+    <Compile Include="OverTime\Tbl_RestrictOT.cs" />
+    <Compile Include="OverTime\Tbl_Setting.cs" />
+    <Compile Include="OverTime\Tbl_ShiftWorking.cs" />
+    <Compile Include="OverTime\Tbl_SummaryOverTime.cs" />
+    <Compile Include="OverTime\Tbl_User.cs" />
+    <Compile Include="OverTime\Tbl_Version.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\IngredientInfo.cs" />
+    <Compile Include="Utils\ListChangeActual.cs" />
+    <Compile Include="Utils\ShowMessage.cs" />
+    <Compile Include="Utils\SideMenu.cs" />
+    <Compile Include="Utils\Common.cs" />
+    <Compile Include="Form\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\SupplierInfomation.cs" />
+    <EmbeddedResource Include="Form\FormChangeOrder.resx">
+      <DependentUpon>FormChangeOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormInput.resx" />
+    <EmbeddedResource Include="Form\FormOverTime.resx">
+      <DependentUpon>FormOverTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormSelectSupplierClon.resx">
+      <DependentUpon>FormSelectSupplierClon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormUpdatePrice.resx">
+      <DependentUpon>FormUpdatePrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormAccountManagement.resx">
+      <DependentUpon>FormAccountManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormCheckHistoryOutStock.resx">
+      <DependentUpon>FormCheckHistoryOutStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormStatistic.resx">
+      <DependentUpon>FormStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormSupplierPriority.resx">
+      <DependentUpon>FormSupplierPriority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormUuTienDatHang.resx">
+      <DependentUpon>FormUuTienDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormChangePassword.resx">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormMenuChinh.resx">
+      <DependentUpon>FormMenuChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormMenuNhe.resx">
+      <DependentUpon>FormMenuNhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormAddDish.resx">
+      <DependentUpon>FormAddDish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormAddIngredient.resx">
+      <DependentUpon>FormAddIngredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormAddIngredientAddSupplier.resx">
+      <DependentUpon>FormAddIngredientAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormAddSupplier.resx">
+      <DependentUpon>FormAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormLoading.resx">
+      <DependentUpon>FormLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormMaster.resx">
+      <DependentUpon>FormMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormOrder.resx">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormOutput.resx">
+      <DependentUpon>FormOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormSelectSupplier.resx">
+      <DependentUpon>FormSelectSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormStock.resx">
+      <DependentUpon>FormStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormSupplier.resx">
+      <DependentUpon>FormSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="CanteenManagementDataSet.xsc">
+      <DependentUpon>CanteenManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CanteenManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CanteenManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CanteenManagementDataSet.xss">
+      <DependentUpon>CanteenManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UMCVITNAM-L3hUp-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carts %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office-material.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wait.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-account-94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lock-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eye-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eye-241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-login-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menu-vertical-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="canteen.ico" />
+    <Content Include="License-LGPL.txt" />
+    <None Include="Resources\icon2.png" />
+    <None Include="Resources\icon1.png" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\pen.png" />
+    <None Include="Resources\arr1.png" />
+    <None Include="Resources\arr.png" />
+    <None Include="Resources\order2.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\search2.png" />
+    <None Include="Resources\login.gif" />
+    <None Include="Resources\menubook.gif" />
+    <None Include="Resources\lock.gif" />
+    <None Include="Resources\key.gif" />
+    <None Include="Resources\account.gif" />
+    <None Include="Resources\login1.png" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\change1.png" />
+    <None Include="Resources\sidemenu.png" />
+    <None Include="Resources\mainmenu.png" />
+    <None Include="Resources\overtime.png" />
+    <None Include="Resources\order.png" />
+    <None Include="Resources\statistic.png" />
+    <None Include="Resources\supplier.png" />
+    <None Include="Resources\master.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\stock.png" />
+    <None Include="Resources\out stock.png" />
+    <None Include="Resources\inStock.png" />
+    <None Include="Resources\zoom-out.png" />
+    <None Include="Resources\ZoomIn.png" />
+    <None Include="Resources\success.gif" />
+    <None Include="Resources\alarm.gif" />
+    <None Include="Resources\change.png" />
+    <None Include="Resources\arrowup.png" />
+    <None Include="Resources\arrowdown.png" />
+    <None Include="Resources\icons8-warning.gif" />
+    <None Include="Resources\search1.png" />
+    <None Include="Resources\Arrow1.png" />
+    <None Include="Resources\Arrow.png" />
+    <None Include="Resources\umc.jpg" />
+    <None Include="Resources\hop tac.png" />
+    <None Include="Resources\doanh thu.png" />
+    <None Include="Resources\loading.png" />
+    <None Include="Resources\view1.png" />
+    <None Include="Resources\view.png" />
+    <None Include="Resources\qs.png" />
+    <None Include="Resources\question1.png" />
+    <None Include="Resources\x.png" />
+    <None Include="Resources\ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
