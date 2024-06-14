@@ -18,7 +18,15 @@ namespace CanTeenManagement.Utils
 {
     public static class Common
     {
-
+        public static string GetSupplierPriority(DateTime day)
+        {
+            var today = (int)day.DayOfWeek;
+            using(var context = new DBContext())
+            {
+                var data = context.Priority.Where(w => w.DAY == today).FirstOrDefault();
+                return data?.SupplierCode;
+            }
+        }
         public static void ClickButtonMenu(Button btn, Panel panle)
         {
             foreach (var item in panle.Controls.OfType<Button>())

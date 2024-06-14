@@ -33,5 +33,7 @@ namespace CanTeenManagement.Model
 
         [StringLength(500)]
         public string Reason { get; set; }
+
+        public bool? IsApproved { get; set; }
     }
 }

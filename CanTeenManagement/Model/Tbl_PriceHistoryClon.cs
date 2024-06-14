@@ -16,20 +16,15 @@
 
         public int? Price { get; set; }
 
-        public DateTime? TimeUpdate { get; set; }
-
-        public int? SupplierId { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime? ApprovalDate { get; set; }
-
-        [StringLength(100)]
-        public string Comment { get; set; }
-
-        public int? PriceMain { get; set; }
-
         [StringLength(10)]
         public string SupplierCode { get; set; }
+
+        public int? mYear { get; set; }
+
+        public int? mMonth { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? ApproveDate { get; set; }
     }
 }
 

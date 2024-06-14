@@ -49,7 +49,7 @@ namespace CanTeenManagement
             Common.StartFormLoading();
             Button btn = sender as Button;
             Common.ClickButtonMenu(btn, panelMenu);
-            Common.AddFormToPanel(new FormInput(), panelContent);
+            Common.AddFormToPanel(new FormInput1(), panelContent);
             Common.CloseFormLoading();
         }
 

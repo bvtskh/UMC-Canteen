@@ -621,3 +621,5 @@ C:\Users\u42107\Desktop\ThanhDX\Thanh_Project\7.Cantin\CanTeenManagement\CanTeen
 C:\Users\u42107\Desktop\ThanhDX\Thanh_Project\7.Cantin\CanTeenManagement\CanTeenManagement\CanTeenManagement\bin\Debug\Newtonsoft.Json.dll
 C:\Users\u42107\Desktop\ThanhDX\Thanh_Project\7.Cantin\CanTeenManagement\CanTeenManagement\CanTeenManagement\bin\Debug\Newtonsoft.Json.xml
 C:\Users\u42107\Desktop\ThanhDX\Thanh_Project\7.Cantin\CanTeenManagement\CanTeenManagement\CanTeenManagement\obj\Debug\CanTeenManagement.Form.FormInput.resources
+C:\Users\u42107\Desktop\ThanhDX\Thanh_Project\7.Cantin\CanTeenManagement\CanTeenManagement\CanTeenManagement\obj\Debug\CanTeenManagement.FormInput1.resources
+C:\Users\u42107\Desktop\ThanhDX\Thanh_Project\7.Cantin\CanTeenManagement\CanTeenManagement\CanTeenManagement\obj\Debug\CanTeenManagement.FormPriority.resources

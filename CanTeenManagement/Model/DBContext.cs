@@ -30,6 +30,7 @@ namespace CanTeenManagement.Model
         public virtual DbSet<Tbl_User> Tbl_User { get; set; }
         public virtual DbSet<Tbl_Version> Tbl_Version { get; set; }
         public virtual DbSet<Tbl_PriceHistoryClon> Tbl_HistoryPriceClon { get; set; }
+        public virtual DbSet<Tbl_Priority> Priority { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

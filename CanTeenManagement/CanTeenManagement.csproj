@@ -114,6 +114,8 @@
       <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="Spire.License">
       <HintPath>..\..\..\..\Desktop\LIB\Spire.License.dll</HintPath>
     </Reference>
@@ -174,6 +176,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CanteenManagementDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\CheckBoxComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormInput1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInput1.Designer.cs">
+      <DependentUpon>FormInput1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPriority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPriority.Designer.cs">
+      <DependentUpon>FormPriority.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\FormChangeOrder.cs">
       <SubType>Form</SubType>
@@ -332,6 +349,7 @@
       <DependentUpon>FormSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\DBContext.cs" />
+    <Compile Include="Model\Tbl_Priority.cs" />
     <Compile Include="Model\Tbl_PriceHistoryClon.cs" />
     <Compile Include="Model\sysdiagram.cs" />
     <Compile Include="Model\Tbl_ChangeOrder.cs" />
@@ -384,6 +402,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\SupplierInfomation.cs" />
+    <EmbeddedResource Include="FormInput1.resx">
+      <DependentUpon>FormInput1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPriority.resx">
+      <DependentUpon>FormPriority.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\FormChangeOrder.resx">
       <DependentUpon>FormChangeOrder.cs</DependentUpon>
     </EmbeddedResource>
